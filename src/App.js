@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<ExerciseList />} />
         <Route path="/edit/:id" element={<EditExercise />} />
         <Route path="/create" element={<CreateExercise />} />
-        <Route path="/user" element={<CreateUser />} />
+        <Route path="/users" element={<CreateUser />} />
       </Routes>
     </div>
   );

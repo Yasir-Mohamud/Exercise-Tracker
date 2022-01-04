@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 export default function CreateExercise() {
   const [exercise, setExercise] = useState({
@@ -12,13 +13,22 @@ export default function CreateExercise() {
   });
 
   useEffect(() => {
-    setExercise((prev) => {
-      return {
-        ...prev,
-        users: ["test user", "test user 2"],
-        username: "test user",
-      };
-    });
+    axios
+      .get("http://localhost:3500/users/")
+      .then((response) => {
+        if (response.data.length > 0) {
+          setExercise((prev) => {
+            return {
+              ...prev,
+              users: response.data.map((user) => user.username),
+              username: response.data[0].username,
+            };
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   function onChangeUsername(e) {
@@ -55,16 +65,19 @@ export default function CreateExercise() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const exerciseData = {
+    const newExercise = {
       username: exercise.username,
       description: exercise.description,
       duration: exercise.duration,
       date: exercise.date,
     };
 
-    console.log(exerciseData);
-
-    //   window.location = "/";
+    console.log(newExercise);
+    // sends you back to home page
+    axios
+      .post("http://localhost:3500/exercises/add", newExercise)
+      .then((res) => console.log(res.data));
+    window.location = "/";
   }
 
   return (

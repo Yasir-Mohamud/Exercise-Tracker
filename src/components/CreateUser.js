@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function CreateUser() {
   const [user, setUser] = useState({ user: "" });
@@ -14,10 +15,16 @@ export default function CreateUser() {
       username: user.username,
     };
     console.log(newUser);
+    axios
+      .post("http://localhost:3500/users/add", newUser)
+      .then((res) => console.log(res.data));
 
     setUser({
       username: "",
     });
+
+    // sends you back to the homepage
+    window.location = "/";
   }
 
   return (
@@ -30,16 +37,13 @@ export default function CreateUser() {
             type="text"
             required
             className="form-control"
+            name="username"
             value={user.username}
             onChange={onChangeUsername}
           />
         </div>
         <div className="form-group">
-          <input
-            type="submit"
-            value="Create User"
-            className="btn btn-primary"
-          />
+          <button className="btn btn-primary"> Create User </button>
         </div>
       </form>
     </div>
