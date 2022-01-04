@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import axios from "axios";
 import Exercise from "./Exercise";
 
@@ -7,6 +6,7 @@ export default function ExerciseList() {
   const [exercise, setExercise] = useState({
     exercises: [],
   });
+  console.log(exercise.exercises);
 
   useEffect(() => {
     axios

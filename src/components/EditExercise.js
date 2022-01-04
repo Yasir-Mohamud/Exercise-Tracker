@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-export default function EditExercise() {
+export default function EditExercise(props) {
+  const params = useParams();
   const [exercise, setExercise] = useState({
     username: "",
     description: "",
@@ -11,20 +13,27 @@ export default function EditExercise() {
     date: new Date(),
     users: [],
   });
-
+  useEffect(() => {
+    console.log("props", props);
+    console.log("here", params.id);
+  }, [props]);
   useEffect(() => {
     axios
-      .get("http://localhost:3500/exercises/" + exercise.match.params.id)
+      .get("http://localhost:3500/exercises/" + params.id)
       .then((response) => {
-        this.setState({
-          username: response.data.username,
-          description: response.data.description,
-          duration: response.data.duration,
-          date: new Date(response.data.date),
+        setExercise((prev) => {
+          return {
+            ...prev,
+            username: response.data.username,
+            description: response.data.description,
+            duration: response.data.duration,
+            date: new Date(response.data.date),
+          };
         });
+        console.log(response);
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch((error) => {
+        console.log(` weee ${error}`);
       });
     axios
       .get("http://localhost:3500/users/")
@@ -34,7 +43,6 @@ export default function EditExercise() {
             return {
               ...prev,
               users: response.data.map((user) => user.username),
-              username: response.data[0].username,
             };
           });
         }
@@ -89,10 +97,7 @@ export default function EditExercise() {
     // sends you back to home page
 
     axios
-      .post(
-        "http://localhost:3500/exercises/update/" + exercise.match.params.id,
-        exercise
-      )
+      .post("http://localhost:3500/exercises/update/" + exercise._id, exercise)
       .then((response) => console.log(response.data));
     window.location = "/";
   }
