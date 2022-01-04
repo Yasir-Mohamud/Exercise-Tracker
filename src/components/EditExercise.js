@@ -13,10 +13,7 @@ export default function EditExercise(props) {
     date: new Date(),
     users: [],
   });
-  useEffect(() => {
-    console.log("props", props);
-    console.log("here", params.id);
-  }, [props]);
+
   useEffect(() => {
     axios
       .get("http://localhost:3500/exercises/" + params.id)
@@ -103,14 +100,15 @@ export default function EditExercise(props) {
   }
 
   return (
-    <div>
+    <div className="d-flex  justify-content-center">
       <h3>Create New Exercise Log</h3>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
+
+      <form onSubmit={handleSubmit} className="w-50 m-2">
+        <div className="form-group mb-3 ">
           <label>Username: </label>
           <select
             required
-            className="form-control"
+            className="form-control "
             value={exercise.username}
             name="username"
             onChange={onChangeUsername}
