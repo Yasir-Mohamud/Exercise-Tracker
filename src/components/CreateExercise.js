@@ -83,6 +83,7 @@ export default function CreateExercise() {
   return (
     <div>
       <h3>Create New Exercise Log</h3>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Username: </label>
