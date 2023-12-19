@@ -1,4 +1,4 @@
-.edit-exercise {
+.createPage {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -7,6 +7,11 @@
   background-color: rgba(255, 255, 255, 0.867);
 }
 
+h3 {
+  text-align: center;
+  font-size: 24pt;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -27,34 +32,27 @@
   margin-top: 20px;
 }
 label {
-  font-size: 20pt;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: white;
+  margin-top: 20px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.form-items {
-  width: 100%;
-  padding: 8px 12px;
-  box-sizing: border-box;
-  border: solid 2px black;
-  margin-top: 10px;
-  font-size: 16pt;
-  line-height: 16pt;
-  border-radius: 10px;
-  height: fit-content;
-}
-
-.button {
+.form-item,
+.create-button {
   width: 100%;
   height: 60px;
-  background-color: black;
-  border: 2px solid black;
-  border-radius: 4px;
-  margin-bottom: 40px;
-  font-size: 22pt;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 20pt;
+  padding: 8px 12px;
+}
+.create-button {
+  background-color: green;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 20pt;
+  margin-bottom: 25px;
 }
 
 .button:hover {
@@ -62,10 +60,6 @@ label {
 }
 
 .button:active {
-  background-color: green;
+  background-color: black;
   color: white;
-}
-
-.form-items:hover {
-  border: solid 3px yellow;
 }

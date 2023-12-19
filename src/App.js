@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ExerciseList from "./components/ExerciseList";
 import EditExercise from "./components/EditExercise";
 import CreateExercise from "./components/CreateExercise";
@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <BrowserRouter>
         <Navbar />
         <Routes>

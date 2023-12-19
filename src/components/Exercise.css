@@ -1,0 +1,19 @@
+.edit {
+  color: rgba(255, 255, 0, 0.689);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  letter-spacing: 2px;
+}
+
+.delete {
+  color: rgba(255, 0, 0, 0.616);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  letter-spacing: 2px;
+}
+
+.edit:hover {
+  color: yellow;
+}
+
+.delete:hover {
+  color: red;
+}

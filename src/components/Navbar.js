@@ -1,30 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-      <Link to="/" className="navbar-brand">
-        ExerciseTracker
-      </Link>
-      <div className="collpase navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-          <li className="navbar-item">
-            <Link to="/" className="nav-link">
-              Exercises
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/create" className="nav-link">
-              Create Exercise Log
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/users" className="nav-link">
-              Create User
-            </Link>
-          </li>
-        </ul>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <Link to="/" className="navbar-link">
+          ExerciseTracker
+        </Link>
+      </div>
+
+      <div className="navbar-right">
+        <Link to="/" className="navbar-link">
+          Exercises
+        </Link>
+
+        <Link to="/create" className="navbar-link">
+          Create Exercise Log
+        </Link>
+
+        <Link to="/users" className="navbar-link">
+          Create User
+        </Link>
       </div>
     </nav>
   );

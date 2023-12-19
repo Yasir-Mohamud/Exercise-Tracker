@@ -31,7 +31,7 @@ router.route("/add").post((request, response) => {
 // gets one exercise using id
 router.route("/:id").get((request, response) => {
   Exercise.findById(request.params.id)
-    .then((exercise) => response.json(exercise))
+    .then((exercise) => console.log(response.json(exercise)))
     .catch((err) => response.status(400).json("Error: " + err));
 });
 

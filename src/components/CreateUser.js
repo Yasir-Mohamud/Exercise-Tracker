@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./CreateUser.css";
 
 export default function CreateUser() {
   const [user, setUser] = useState({ user: "" });
@@ -28,22 +29,23 @@ export default function CreateUser() {
   }
 
   return (
-    <div>
+    <div className="createPage">
       <h3>Create New User</h3>
-      <form onSubmit={handleSubmit}>
+
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Username: </label>
+          <label className="form-label">Username </label>
           <input
             type="text"
             required
-            className="form-control"
             name="username"
             value={user.username}
             onChange={onChangeUsername}
+            className="form-item"
           />
         </div>
         <div className="form-group">
-          <button className="btn btn-primary"> Create User </button>
+          <button className="create-button"> Create User </button>
         </div>
       </form>
     </div>
