@@ -29,6 +29,7 @@ There are many page/views on Wadani Resturant App including :
 <img width="1536" alt="ExerciseTracker-Logged Exercise Page" src="https://github.com/Yasir-Mohamud/Exercise-Tracker/assets/59776082/ea83fc32-c661-41f1-be38-fd8340fd6c15">
 <img width="1536" alt="Edit Exercise Page 1" src="https://github.com/Yasir-Mohamud/Exercise-Tracker/assets/59776082/8d553a29-2baf-4a95-89c9-c2c8257dad2f">
 <img width="1536" alt="Edit Exercise Page" src="https://github.com/Yasir-Mohamud/Exercise-Tracker/assets/59776082/9297afe6-bdbe-4d03-b8c6-04a4dd8f4967">
+<img width="1536" alt="Edited Logged Exercise" src="https://github.com/Yasir-Mohamud/Exercise-Tracker/assets/59776082/361a3d64-79a9-477a-addb-ec33ebc0937d">
 
 
 ### Features
